@@ -18,6 +18,15 @@ sam init
 
 ---
 
+## Configuration
+
+```sh
+# aws credentials are mounted into the guest container via `~/.aws`s
+# source=/home/ec2-user/.aws,target=/root/.aws
+``
+
+---
+
 ## Files
 
 * [`.devcontainer/devcontainer.json`](.devcontainer/devcontainer.json)
