@@ -23,7 +23,8 @@
 	],
 	"features": {
 		"docker-in-docker": "latest",
-		"github-cli": "latest"
+		"github-cli": "latest",
+		"homebrew": "latest"
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
