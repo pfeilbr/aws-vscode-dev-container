@@ -29,4 +29,12 @@ RUN curl -L "https://github.com/aws/aws-sam-cli/releases/download/v1.37.0/aws-sa
 RUN npm -g install typescript && \
     npm install -g aws-cdk
 
+# lumigo-cli
+RUN npm install -g lumigo-cli
+
+# homebrew installs
+# ENV BREW_PREFIX=/home/linuxbrew/.linuxbrew
+# ENV PATH=${BREW_PREFIX}/sbin:${BREW_PREFIX}/bin:${PATH}
+# RUN brew install jq yq pipx pyenv tree 
+
     
