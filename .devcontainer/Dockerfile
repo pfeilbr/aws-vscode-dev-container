@@ -16,12 +16,14 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 # RUN su node -c "npm install -g <your-package-list-here>"
 
 # aws cli v2
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip" \
+ARG AWS_CLI_V2_VERSION="2.4.27"
+RUN curl -L "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_V2_VERSION}.zip" -o "awscliv2.zip" \
     && unzip awscliv2.zip \
     && sudo ./aws/install
 
 # aws sam cli
-RUN curl -L "https://github.com/aws/aws-sam-cli/releases/download/v1.37.0/aws-sam-cli-linux-x86_64.zip" -o "aws-sam-cli-linux-x86_64.zip" && \
+ARG SAM_CLI_VERSION="1.40.1"
+RUN curl -L https://github.com/aws/aws-sam-cli/releases/download/v${SAM_CLI_VERSION}/aws-sam-cli-linux-x86_64.zip -o "aws-sam-cli-linux-x86_64.zip" && \
     unzip "aws-sam-cli-linux-x86_64.zip" -d sam-installation && \
     sudo ./sam-installation/install
 
