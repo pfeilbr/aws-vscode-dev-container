@@ -16,13 +16,13 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 # RUN su node -c "npm install -g <your-package-list-here>"
 
 # aws cli v2
-ARG AWS_CLI_V2_VERSION="2.4.27"
+ARG AWS_CLI_V2_VERSION="2.5.2"
 RUN curl -L "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_V2_VERSION}.zip" -o "awscliv2.zip" \
     && unzip awscliv2.zip \
     && sudo ./aws/install
 
 # aws sam cli
-ARG SAM_CLI_VERSION="1.40.1"
+ARG SAM_CLI_VERSION="1.43.0"
 RUN curl -L https://github.com/aws/aws-sam-cli/releases/download/v${SAM_CLI_VERSION}/aws-sam-cli-linux-x86_64.zip -o "aws-sam-cli-linux-x86_64.zip" && \
     unzip "aws-sam-cli-linux-x86_64.zip" -d sam-installation && \
     sudo ./sam-installation/install
@@ -33,6 +33,12 @@ RUN npm -g install typescript && \
 
 # lumigo-cli
 RUN npm install -g lumigo-cli
+
+# terraform
+RUN sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+RUN sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+RUN sudo apt-get update && sudo apt-get install terraform
 
 # homebrew installs
 # ENV BREW_PREFIX=/home/linuxbrew/.linuxbrew
