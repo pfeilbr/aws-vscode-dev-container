@@ -16,6 +16,16 @@ cd my-aws-project
 sam init
 ```
 
+## Install into existing repo
+
+```sh
+mkdir -p .devcontainer
+pushd .devcontainer
+curl -O https://raw.githubusercontent.com/pfeilbr/aws-vscode-dev-container/master/.devcontainer/Dockerfile
+curl -O https://raw.githubusercontent.com/pfeilbr/aws-vscode-dev-container/master/.devcontainer/devcontainer.json
+popd
+```
+
 ---
 
 ## Configuration
