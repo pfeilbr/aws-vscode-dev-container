@@ -16,14 +16,21 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 # RUN su node -c "npm install -g <your-package-list-here>"
 
 # aws cli v2
-ARG AWS_CLI_V2_VERSION="2.5.2"
-RUN curl -L "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_V2_VERSION}.zip" -o "awscliv2.zip" \
-    && unzip awscliv2.zip \
-    && sudo ./aws/install
+# ARG AWS_CLI_V2_VERSION="2.5.2"
+# RUN curl -L "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_V2_VERSION}.zip" -o "awscliv2.zip" \
+#    && unzip awscliv2.zip \
+#    && sudo ./aws/install
+
+# RUN mkdir ~/.tmp && cd $_
+
+# install aws-cli v2
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+  unzip awscliv2.zip && \
+  sudo ./aws/install
 
 # aws sam cli
-ARG SAM_CLI_VERSION="1.43.0"
-RUN curl -L https://github.com/aws/aws-sam-cli/releases/download/v${SAM_CLI_VERSION}/aws-sam-cli-linux-x86_64.zip -o "aws-sam-cli-linux-x86_64.zip" && \
+# ARG SAM_CLI_VERSION="1.43.0"
+RUN curl -L https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip -o "aws-sam-cli-linux-x86_64.zip" && \
     unzip "aws-sam-cli-linux-x86_64.zip" -d sam-installation && \
     sudo ./sam-installation/install
 
