@@ -37,6 +37,12 @@ popd
 
 ---
 
+## TODO
+
+* add pieces from <https://gist.github.com/pahud/ba133985e1cf3531c09b5ea553a72739> for aws sso config
+
+---
+
 ## Files
 
 * [`.devcontainer/devcontainer.json`](.devcontainer/devcontainer.json)
