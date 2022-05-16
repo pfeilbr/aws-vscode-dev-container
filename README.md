@@ -26,6 +26,21 @@ curl -O https://raw.githubusercontent.com/pfeilbr/aws-vscode-dev-container/maste
 popd
 ```
 
+## Login with AWS SSO
+
+* see <https://gist.github.com/pahud/ba133985e1cf3531c09b5ea553a72739>
+
+```sh
+mkdir ~/.bin && cd $_
+wget https://raw.githubusercontent.com/pahud/vscode/main/.devcontainer/bin/aws-sso-credential-process && \
+chmod +x aws-sso-credential-process
+
+
+aws configure set credential_process ${HOME}/.bin/aws-sso-credential-process
+touch ~/.aws/credentials && chmod 600 $_
+aws configure sso --profile default
+```
+
 ---
 
 ## Configuration
@@ -39,7 +54,7 @@ popd
 
 ## TODO
 
-* add pieces from <https://gist.github.com/pahud/ba133985e1cf3531c09b5ea553a72739> for aws sso config
+* ...
 
 ---
 
