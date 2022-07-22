@@ -25,7 +25,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/universal:linux
 #    && unzip awscliv2.zip \
 #    && sudo ./aws/install
 
-# RUN mkdir ~/.tmp && cd $_
+USER root
 
 # install aws-cli v2
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
