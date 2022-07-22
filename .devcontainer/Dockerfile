@@ -56,4 +56,5 @@ RUN npm install -g lumigo-cli
 # ENV PATH=${BREW_PREFIX}/sbin:${BREW_PREFIX}/bin:${PATH}
 # RUN brew install jq yq pipx pyenv tree 
 
+USER codespace
     
