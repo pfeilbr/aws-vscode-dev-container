@@ -24,6 +24,7 @@ pushd .devcontainer
 curl -O https://raw.githubusercontent.com/pfeilbr/aws-vscode-dev-container/master/.devcontainer/Dockerfile
 curl -O https://raw.githubusercontent.com/pfeilbr/aws-vscode-dev-container/master/.devcontainer/devcontainer.json
 curl -O https://raw.githubusercontent.com/pfeilbr/aws-vscode-dev-container/master/.devcontainer/postCreateCommand.sh
+chmod +x postCreateCommand.sh
 popd
 ```
 
