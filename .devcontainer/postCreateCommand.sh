@@ -8,7 +8,8 @@ brew install \
     pipx \
     pyenv \
     tree \
-    terraform
+    terraform \
+    tmux
 
 # pyenv setup
 pyenv install 3.9.13
