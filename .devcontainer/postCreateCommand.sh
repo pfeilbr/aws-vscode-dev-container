@@ -9,7 +9,8 @@ brew install \
     pyenv \
     tree \
     terraform \
-    tmux
+    tmux \
+    cfn-lint
 
 # pyenv setup
 pyenv install 3.9.13
