@@ -6,7 +6,8 @@
 
 # universal codespaces image which include all the common languages
 # see <https://github.com/microsoft/vscode-dev-containers/tree/main/containers/codespaces-linux>
-FROM mcr.microsoft.com/vscode/devcontainers/universal:latest
+#FROM mcr.microsoft.com/vscode/devcontainers/universal:latest
+FROM mcr.microsoft.com/vscode/devcontainers/universal:2-focal
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -56,5 +57,5 @@ RUN npm install -g lumigo-cli
 # ENV PATH=${BREW_PREFIX}/sbin:${BREW_PREFIX}/bin:${PATH}
 # RUN brew install jq yq pipx pyenv tree 
 
-USER vscode
+USER codespace
     
